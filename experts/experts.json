@@ -1,0 +1,16 @@
+{
+  "experts": [
+    {
+      "slug": "huberman",
+      "name": "Andrew Huberman",
+      "channel": "https://www.youtube.com/@hubermanlab",
+      "domain": "health, neuroscience, performance",
+      "notebook_ids": [
+        "0a40a4dc-b28e-4937-b041-d13273653ab8",
+        "4d9caf54-489c-4804-a39a-82669bd89722"
+      ],
+      "status": "loaded",
+      "videos_loaded": 395
+    }
+  ]
+}

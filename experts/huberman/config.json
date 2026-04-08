@@ -1,0 +1,21 @@
+{
+  "name": "Andrew Huberman",
+  "channel": "https://www.youtube.com/@hubermanlab",
+  "domain": "health, neuroscience, performance",
+  "notebooks": [
+    {
+      "id": "0a40a4dc-b28e-4937-b041-d13273653ab8",
+      "name": "Andrew Huberman - Health & Neuroscience",
+      "videos_loaded": 300,
+      "range": "0-299"
+    },
+    {
+      "id": "4d9caf54-489c-4804-a39a-82669bd89722",
+      "name": "Andrew Huberman - Health & Neuroscience (Part 2)",
+      "videos_loaded": 95,
+      "range": "300-394"
+    }
+  ],
+  "status": "loaded",
+  "total_videos_scraped": 395
+}
